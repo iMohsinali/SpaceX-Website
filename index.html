@@ -6,11 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/index.js"></script>
     <title>SpaceX</title>
 </head>
 
 <body>
+    <div id="overlay"></div>
+
+    <!-- mobile Menu -->
+
+    <div id="mobile" class="mobile-main-menu">
+        <ul>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Launches</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Updates</a></li>
+            <li><a href="#">Shop</a></li>
+            <li class="mobile-only"><a href="falcon9.html">Falcon 9</a></li>
+            <li class="mobile-only"><a href="falcon-heavy.html">Falcon Heavy</a></li>
+            <li class="mobile-only"><a href="#">Dream</a></li>
+            <li class="mobile-only"><a href="#">Starship</a></li>
+            <li class="mobile-only"><a href="#">Human Spaceflight</a></li>
+            <li class="mobile-only"><a href="#">Rideshare</a> </li>
+
+
+
+        </ul>
+
+    </div>
     <header class="main-header">
         <div class="logo">
             <a href="index.html">
@@ -23,7 +45,6 @@
                 <li><a href="falcon9.html">Falcon 9</a></li>
                 <li><a href="falcon-heavy.html">Falcon Heavy</a></li>
                 <li><a href="#">Dream</a></li>
-
                 <li><a href="#">Starship</a></li>
                 <li><a href="#">Human Spaceflight</a></li>
                 <li><a href="#">Rideshare</a> </li>
@@ -32,6 +53,14 @@
             </ul>
         </nav>
     </header>
+    <!-- hamburger mneu -->
+    <button id="menu-btn" class="hamburger" type="button">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+
+    </button>
+
     <!-- section A -->
 
     <section class="section-a">
@@ -155,6 +184,8 @@
 
         </ul>
     </footer>
+    <script src="js/index.js"></script>
+
 </body>
 
 </html>
