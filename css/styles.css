@@ -119,6 +119,9 @@ section {
 .section-a {
   background-image: url("../img/section-a.webp");
 }
+.section-b {
+  background-image: url("../img/section-b.webp");
+}
 .section-inner a {
   animation: fadeInUp 0.5s ease-in-out 0.4s;
   animation-fill-mode: both;
