@@ -10,7 +10,7 @@ const data = [
   {
     id: 1,
     img: sa,
-    title: "Up Comping Launch",
+    title: "UpComping Launch",
     title_b: "CRS-25 Mission",
   },
   {

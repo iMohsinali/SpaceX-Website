@@ -2,14 +2,17 @@ import React from "react";
 
 const Section = ({ id, img, title, title_b }) => {
   return (
-    <section>
-      <img src={img} className="section-img" />
+    <section
+      style={{
+        backgroundImage: `url(${img})`,
+      }}
+    >
       <div className="section-inner">
         <h4>{title}</h4>
         <h2>{title_b}</h2>
         <a href="#" className="btn">
           <div className="hover"></div>
-          <span>ReWatch</span>
+          <div>ReWatch</div>
         </a>
       </div>
       {id != 6 && (

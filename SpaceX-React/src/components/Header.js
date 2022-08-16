@@ -1,7 +1,24 @@
 import logo from "../img/logo.png";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
+  const [open, setopen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
+  const openHamburger = () => {
+    setopen(!open);
+  };
+  const closeHamburger = () => {
+    setopen(!open);
+  };
+  console.log(openHamburger, open);
   return (
     <div>
       <header className="main-header">
@@ -36,6 +53,16 @@ const Header = () => {
           </ul>
         </nav>
       </header>
+
+      <button
+        class={`${open ? "open hamburger" : "hamburger"}`}
+        type="button"
+        onClick={openHamburger}
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
     </div>
   );
 };
