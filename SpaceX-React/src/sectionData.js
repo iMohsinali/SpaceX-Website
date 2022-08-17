@@ -5,6 +5,7 @@ import sd from "./img/section-d.webp";
 import se from "./img/section-e.webp";
 import sf from "./img/section-f.webp";
 import falcon from "./img/falcon-9.webp";
+import dragon from "./img/dragon.webp";
 
 const data = [
   {

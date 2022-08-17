@@ -1,24 +1,21 @@
 import logo from "../img/logo.png";
 import React, { useEffect } from "react";
-import { useState } from "react";
+import { openMenu, closeMenu } from "../Features/states";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
-  const [open, setopen] = useState(false);
+  const { isOpen } = useSelector((state) => state.menu);
+  console.log(isOpen, openMenu);
 
   useEffect(() => {
-    if (open) {
+    if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-  }, [open]);
-  const openHamburger = () => {
-    setopen(!open);
-  };
-  const closeHamburger = () => {
-    setopen(!open);
-  };
-  console.log(openHamburger, open);
+  }, [isOpen]);
+
+  const dispatch = useDispatch();
   return (
     <div>
       <header className="main-header">
@@ -55,9 +52,11 @@ const Header = () => {
       </header>
 
       <button
-        class={`${open ? "open hamburger" : "hamburger"}`}
+        class={`${isOpen ? "open hamburger" : "hamburger"}`}
         type="button"
-        onClick={openHamburger}
+        onClick={() => {
+          dispatch(openMenu());
+        }}
       >
         <span class="hamburger-top"></span>
         <span class="hamburger-middle"></span>
