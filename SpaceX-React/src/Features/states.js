@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isOpen: false,
+  urlName: " Moh",
 };
 
 const menuSlice = createSlice({
@@ -15,9 +16,12 @@ const menuSlice = createSlice({
     closeMenu: (state, actions) => {
       state.isOpen = false;
     },
+    changeName: (state, actions) => {
+      state.urlName = actions.payload;
+    },
   },
 });
 
-export const { openMenu, closeMenu } = menuSlice.actions;
+export const { openMenu, closeMenu, changeName } = menuSlice.actions;
 
 export default menuSlice.reducer;
