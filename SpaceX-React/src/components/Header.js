@@ -1,41 +1,67 @@
 import logo from "../img/logo.png";
-import React from "react";
-
+import React, { useEffect } from "react";
+import { openMenu } from "../Features/states";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { changeName } from "../Features/states";
 const Header = () => {
+  const { isOpen } = useSelector((state) => state.menu);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isOpen]);
+
+  const dispatch = useDispatch();
   return (
     <div>
       <header className="main-header">
         <div className="logo">
-          <a href="#">
+          <Link to="/">
             <img src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <nav className="desktop-main-menu">
           <ul>
-            <li>
-              <a href="falcon9.html">Falcon 9</a>
+            <li onClick={() => dispatch(changeName("/falcon9"))}>
+              <Link to={"/falcon9"}>Falcon 9</Link>
             </li>
-            <li>
-              <a href="falcon-heavy.html">Falcon Heavy</a>
+            <li onClick={() => dispatch(changeName("/falcon-heavy"))}>
+              <Link to={"falcon-heavy"}>Falcon Heavy</Link>
             </li>
-            <li>
-              <a href="#">Dream</a>
+            <li onClick={() => dispatch(changeName("/dream"))}>
+              <Link to={"dream"}>Dream</Link>
             </li>
-            <li>
-              <a href="#">Starship</a>
+            <li onClick={() => dispatch(changeName("/starship"))}>
+              <Link to={"starship"}>Starship</Link>
             </li>
-            <li>
-              <a href="#">Human Spaceflight</a>
+            <li onClick={() => dispatch(changeName("/human-spaceflight"))}>
+              <Link to={"human-spaceflight"}>Human Spaceflight</Link>
             </li>
-            <li>
-              <a href="#">Rideshare</a>{" "}
+            <li onClick={() => dispatch(changeName("/rideshare"))}>
+              <Link to={"rideshare"}>RideShare</Link>
             </li>
-            <li>
-              <a href="#">Shop</a>
+            <li onClick={() => dispatch(changeName("/shop"))}>
+              <Link to={"shop"}>Shop</Link>
             </li>
           </ul>
         </nav>
       </header>
+
+      <button
+        class={`${isOpen ? "open hamburger" : "hamburger"}`}
+        type="button"
+        onClick={() => {
+          dispatch(openMenu());
+        }}
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
     </div>
   );
 };
