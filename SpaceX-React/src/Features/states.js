@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isOpen: false,
   urlName: " Moh",
+  navbar: false,
 };
 
 const menuSlice = createSlice({
@@ -19,9 +20,12 @@ const menuSlice = createSlice({
     changeName: (state, actions) => {
       state.urlName = actions.payload;
     },
+    hideNav: (state, actions) => {
+      state.navbar = actions.payload;
+    },
   },
 });
 
-export const { openMenu, closeMenu, changeName } = menuSlice.actions;
+export const { openMenu, closeMenu, changeName, hideNav } = menuSlice.actions;
 
 export default menuSlice.reducer;

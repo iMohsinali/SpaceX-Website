@@ -53,6 +53,11 @@ export const inner = [
     h3: "FALCON 9",
     p: "FIRSTORBIT CLASS ROCKET CAPCABLE ABEASD",
     link: "/falcon9",
+    targetValue: {
+      Ta: 15,
+      Tb: 10,
+      Tc: 20,
+    },
   },
   {
     img: falconHeavy,
@@ -96,5 +101,10 @@ export const inner = [
     h3: "Shop",
     p: "Working",
     link: "/shop",
+    targetValue: {
+      Ta: 15,
+      Tb: 10,
+      Tc: 20,
+    },
   },
 ];
