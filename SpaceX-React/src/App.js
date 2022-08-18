@@ -7,20 +7,23 @@ import InnerSection from "./components/InnerSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const { isOpen, urlName } = useSelector((state) => state.menu);
+  const { isOpen, urlName, navbar } = useSelector((state) => state.menu);
 
-  // let match = useMatch();
-  // const nameUrl = window.location;
+  let n = window.location.href;
+  let m = n.split("/");
+  let u = m[m.length - 1];
+  let lname = "/" + u;
+  console.log(lname);
 
-  console.log(urlName);
   return (
     <Router>
       {isOpen && <div className="overlay"></div>}
-      <Header />
+
+      {!navbar && <Header />}
       <Mobile />
       <Routes>
         <Route exact path="/" element={<Sections />} />
-        <Route path={urlName} element={<InnerSection />} />
+        <Route path={lname} element={<InnerSection />} />
       </Routes>
 
       <Footer />
